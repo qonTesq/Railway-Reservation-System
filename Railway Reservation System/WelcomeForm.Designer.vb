@@ -30,6 +30,7 @@ Partial Class WelcomeForm
         Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout
         Me.SuspendLayout
         '
@@ -101,13 +102,27 @@ Partial Class WelcomeForm
         Me.Guna2DragControl1.TargetControl = Me.Guna2Panel1
         Me.Guna2DragControl1.UseTransparentDrag = true
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = true
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 29!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
+        Me.Label1.Location = New System.Drawing.Point(13, 35)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(167, 66)
+        Me.Label1.TabIndex = 29
+        Me.Label1.Text = "travel"
+        '
         'WelcomeForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120!, 120!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1088, 564)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -117,6 +132,7 @@ Partial Class WelcomeForm
         Me.Text = "Form1"
         Me.Guna2Panel1.ResumeLayout(false)
         Me.ResumeLayout(false)
+        Me.PerformLayout
 
 End Sub
 
@@ -127,4 +143,5 @@ End Sub
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents Label1 As Label
 End Class

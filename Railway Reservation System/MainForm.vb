@@ -1,10 +1,12 @@
-﻿Public Class MainForm
-    Private Sub MainForm_Load(sender As Object, e As EventArgs) handles MyBase.Load
+﻿Imports Guna.UI2.WinForms
+
+Public Class MainForm
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatePicker.MinDate = Date.Now
         DatePicker.MaxDate = Date.Now.AddYears(1)
     End Sub
 
-    Private Sub SearchButton_Click(sender As Object, e As EventArgs) handles SearchButton.Click
+    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         If ValidateFields() Then
             Return
         End If
@@ -27,7 +29,7 @@
         End If
     End Function
 
-    Private Sub Guna2ControlBox1_Click(sender As Object, e As EventArgs) handles Guna2ControlBox1.Click
+    Private Sub Guna2ControlBox1_Click(sender As Object, e As EventArgs) Handles Guna2ControlBox1.Click
         WelcomeForm.Show()
     End Sub
 End Class
