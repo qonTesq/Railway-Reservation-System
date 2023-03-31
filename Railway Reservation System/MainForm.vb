@@ -1,6 +1,4 @@
-﻿Imports Guna.UI2.WinForms
-
-Public Class MainForm
+﻿Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatePicker.MinDate = Date.Now
         DatePicker.MaxDate = Date.Now.AddYears(1)
