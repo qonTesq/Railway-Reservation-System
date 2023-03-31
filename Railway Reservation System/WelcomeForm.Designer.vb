@@ -67,7 +67,7 @@ Partial Class WelcomeForm
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1121, 33)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1088, 33)
         Me.Guna2Panel1.TabIndex = 3
         '
         'Guna2ControlBox3
@@ -77,7 +77,7 @@ Partial Class WelcomeForm
         Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
         Me.Guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.Guna2ControlBox3.IconColor = System.Drawing.Color.White
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(1000, 0)
+        Me.Guna2ControlBox3.Location = New System.Drawing.Point(967, 0)
         Me.Guna2ControlBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
         Me.Guna2ControlBox3.Size = New System.Drawing.Size(57, 33)
@@ -90,7 +90,7 @@ Partial Class WelcomeForm
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.White
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1064, 0)
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1031, 0)
         Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(57, 33)
@@ -117,12 +117,11 @@ Partial Class WelcomeForm
         '
         'WelcomeForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = true
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120!, 120!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1121, 564)
+        Me.ClientSize = New System.Drawing.Size(1088, 564)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Button2)

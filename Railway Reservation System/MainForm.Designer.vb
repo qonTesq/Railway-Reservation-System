@@ -49,17 +49,17 @@ Partial Class MainForm
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.TrainPanel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.ArriveTimeLabel1 = New System.Windows.Forms.Label()
-        Me.DepartTimeLabel1 = New System.Windows.Forms.Label()
-        Me.DestinationLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.SourceLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TrainNameLabel1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TrainClassLabel1 = New System.Windows.Forms.Label()
-        Me.TrainNameDashLabel = New System.Windows.Forms.Label()
-        Me.TrainIdLabel1 = New System.Windows.Forms.Label()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.TrainIdLabel1 = New System.Windows.Forms.Label()
+        Me.TrainNameDashLabel = New System.Windows.Forms.Label()
+        Me.TrainClassLabel1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TrainNameLabel1 = New System.Windows.Forms.Label()
+        Me.SourceLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.DestinationLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.DepartTimeLabel1 = New System.Windows.Forms.Label()
+        Me.ArriveTimeLabel1 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -425,7 +425,7 @@ Partial Class MainForm
         '
         Me.Guna2Separator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.Guna2Separator1.FillThickness = 3
-        Me.Guna2Separator1.Location = New System.Drawing.Point(48, 262)
+        Me.Guna2Separator1.Location = New System.Drawing.Point(48, 258)
         Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Separator1.Name = "Guna2Separator1"
         Me.Guna2Separator1.Size = New System.Drawing.Size(688, 12)
@@ -455,131 +455,6 @@ Partial Class MainForm
         Me.TrainPanel1.Size = New System.Drawing.Size(738, 185)
         Me.TrainPanel1.TabIndex = 42
         '
-        'ArriveTimeLabel1
-        '
-        Me.ArriveTimeLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.ArriveTimeLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.ArriveTimeLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.ArriveTimeLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
-        Me.ArriveTimeLabel1.Location = New System.Drawing.Point(618, 113)
-        Me.ArriveTimeLabel1.Name = "ArriveTimeLabel1"
-        Me.ArriveTimeLabel1.Size = New System.Drawing.Size(97, 19)
-        Me.ArriveTimeLabel1.TabIndex = 12
-        Me.ArriveTimeLabel1.Text = "00:00 AM/PM"
-        Me.ArriveTimeLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'DepartTimeLabel1
-        '
-        Me.DepartTimeLabel1.AutoSize = true
-        Me.DepartTimeLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.DepartTimeLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.DepartTimeLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
-        Me.DepartTimeLabel1.Location = New System.Drawing.Point(19, 113)
-        Me.DepartTimeLabel1.Name = "DepartTimeLabel1"
-        Me.DepartTimeLabel1.Size = New System.Drawing.Size(97, 19)
-        Me.DepartTimeLabel1.TabIndex = 11
-        Me.DepartTimeLabel1.Text = "00:00 AM/PM"
-        '
-        'DestinationLabel1
-        '
-        Me.DestinationLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.DestinationLabel1.AutoSize = false
-        Me.DestinationLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.DestinationLabel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.DestinationLabel1.ForeColor = System.Drawing.Color.White
-        Me.DestinationLabel1.Location = New System.Drawing.Point(553, 83)
-        Me.DestinationLabel1.Name = "DestinationLabel1"
-        Me.DestinationLabel1.Size = New System.Drawing.Size(162, 27)
-        Me.DestinationLabel1.TabIndex = 10
-        Me.DestinationLabel1.Text = "<strong>Destination</strong> <FONT COLOR=""#d9d9d9"">(DST)</FONT>"
-        Me.DestinationLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight
-        '
-        'SourceLabel1
-        '
-        Me.SourceLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.SourceLabel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.SourceLabel1.ForeColor = System.Drawing.Color.White
-        Me.SourceLabel1.Location = New System.Drawing.Point(23, 83)
-        Me.SourceLabel1.Name = "SourceLabel1"
-        Me.SourceLabel1.Size = New System.Drawing.Size(108, 27)
-        Me.SourceLabel1.TabIndex = 9
-        Me.SourceLabel1.Text = "<strong>Source</strong> <FONT COLOR=""#d9d9d9"">(SRC)</FONT>"
-        '
-        'TrainNameLabel1
-        '
-        Me.TrainNameLabel1.AutoSize = true
-        Me.TrainNameLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.TrainNameLabel1.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TrainNameLabel1.ForeColor = System.Drawing.Color.White
-        Me.TrainNameLabel1.Location = New System.Drawing.Point(166, 25)
-        Me.TrainNameLabel1.Name = "TrainNameLabel1"
-        Me.TrainNameLabel1.Size = New System.Drawing.Size(115, 25)
-        Me.TrainNameLabel1.TabIndex = 7
-        Me.TrainNameLabel1.Text = "Train Name"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = true
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(156, 50)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 19)
-        Me.Label2.TabIndex = 5
-        '
-        'TrainClassLabel1
-        '
-        Me.TrainClassLabel1.AutoSize = true
-        Me.TrainClassLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.TrainClassLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TrainClassLabel1.ForeColor = System.Drawing.Color.Silver
-        Me.TrainClassLabel1.Location = New System.Drawing.Point(84, 50)
-        Me.TrainClassLabel1.Name = "TrainClassLabel1"
-        Me.TrainClassLabel1.Size = New System.Drawing.Size(163, 19)
-        Me.TrainClassLabel1.TabIndex = 4
-        Me.TrainClassLabel1.Text = "Train Class • 00hr 00min"
-        '
-        'TrainNameDashLabel
-        '
-        Me.TrainNameDashLabel.AutoSize = true
-        Me.TrainNameDashLabel.BackColor = System.Drawing.Color.Transparent
-        Me.TrainNameDashLabel.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TrainNameDashLabel.ForeColor = System.Drawing.Color.White
-        Me.TrainNameDashLabel.Location = New System.Drawing.Point(154, 25)
-        Me.TrainNameDashLabel.Name = "TrainNameDashLabel"
-        Me.TrainNameDashLabel.Size = New System.Drawing.Size(19, 25)
-        Me.TrainNameDashLabel.TabIndex = 3
-        Me.TrainNameDashLabel.Text = "-"
-        '
-        'TrainIdLabel1
-        '
-        Me.TrainIdLabel1.AutoSize = true
-        Me.TrainIdLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.TrainIdLabel1.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TrainIdLabel1.ForeColor = System.Drawing.Color.White
-        Me.TrainIdLabel1.Location = New System.Drawing.Point(83, 25)
-        Me.TrainIdLabel1.Name = "TrainIdLabel1"
-        Me.TrainIdLabel1.Size = New System.Drawing.Size(78, 25)
-        Me.TrainIdLabel1.TabIndex = 2
-        Me.TrainIdLabel1.Text = "#00000"
-        '
-        'Guna2CirclePictureBox1
-        '
-        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"),System.Drawing.Image)
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(30, 30)
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(35, 35)
-        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2CirclePictureBox1.TabIndex = 1
-        Me.Guna2CirclePictureBox1.TabStop = false
-        Me.Guna2CirclePictureBox1.UseTransparentBackground = true
-        '
         'Guna2Shapes1
         '
         Me.Guna2Shapes1.BackColor = System.Drawing.Color.Transparent
@@ -596,6 +471,131 @@ Partial Class MainForm
         Me.Guna2Shapes1.Text = "Guna2Shapes1"
         Me.Guna2Shapes1.UseTransparentBackground = true
         Me.Guna2Shapes1.Zoom = 80
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"),System.Drawing.Image)
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(30, 30)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(35, 35)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2CirclePictureBox1.TabIndex = 1
+        Me.Guna2CirclePictureBox1.TabStop = false
+        Me.Guna2CirclePictureBox1.UseTransparentBackground = true
+        '
+        'TrainIdLabel1
+        '
+        Me.TrainIdLabel1.AutoSize = true
+        Me.TrainIdLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.TrainIdLabel1.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainIdLabel1.ForeColor = System.Drawing.Color.White
+        Me.TrainIdLabel1.Location = New System.Drawing.Point(83, 25)
+        Me.TrainIdLabel1.Name = "TrainIdLabel1"
+        Me.TrainIdLabel1.Size = New System.Drawing.Size(78, 25)
+        Me.TrainIdLabel1.TabIndex = 2
+        Me.TrainIdLabel1.Text = "#00000"
+        '
+        'TrainNameDashLabel
+        '
+        Me.TrainNameDashLabel.AutoSize = true
+        Me.TrainNameDashLabel.BackColor = System.Drawing.Color.Transparent
+        Me.TrainNameDashLabel.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainNameDashLabel.ForeColor = System.Drawing.Color.White
+        Me.TrainNameDashLabel.Location = New System.Drawing.Point(154, 25)
+        Me.TrainNameDashLabel.Name = "TrainNameDashLabel"
+        Me.TrainNameDashLabel.Size = New System.Drawing.Size(19, 25)
+        Me.TrainNameDashLabel.TabIndex = 3
+        Me.TrainNameDashLabel.Text = "-"
+        '
+        'TrainClassLabel1
+        '
+        Me.TrainClassLabel1.AutoSize = true
+        Me.TrainClassLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.TrainClassLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainClassLabel1.ForeColor = System.Drawing.Color.Silver
+        Me.TrainClassLabel1.Location = New System.Drawing.Point(84, 50)
+        Me.TrainClassLabel1.Name = "TrainClassLabel1"
+        Me.TrainClassLabel1.Size = New System.Drawing.Size(163, 19)
+        Me.TrainClassLabel1.TabIndex = 4
+        Me.TrainClassLabel1.Text = "Train Class • 00hr 00min"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = true
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Silver
+        Me.Label2.Location = New System.Drawing.Point(156, 50)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 19)
+        Me.Label2.TabIndex = 5
+        '
+        'TrainNameLabel1
+        '
+        Me.TrainNameLabel1.AutoSize = true
+        Me.TrainNameLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.TrainNameLabel1.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainNameLabel1.ForeColor = System.Drawing.Color.White
+        Me.TrainNameLabel1.Location = New System.Drawing.Point(166, 25)
+        Me.TrainNameLabel1.Name = "TrainNameLabel1"
+        Me.TrainNameLabel1.Size = New System.Drawing.Size(115, 25)
+        Me.TrainNameLabel1.TabIndex = 7
+        Me.TrainNameLabel1.Text = "Train Name"
+        '
+        'SourceLabel1
+        '
+        Me.SourceLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.SourceLabel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.SourceLabel1.ForeColor = System.Drawing.Color.White
+        Me.SourceLabel1.Location = New System.Drawing.Point(23, 83)
+        Me.SourceLabel1.Name = "SourceLabel1"
+        Me.SourceLabel1.Size = New System.Drawing.Size(108, 27)
+        Me.SourceLabel1.TabIndex = 9
+        Me.SourceLabel1.Text = "<strong>Source</strong> <FONT COLOR=""#d9d9d9"">(SRC)</FONT>"
+        '
+        'DestinationLabel1
+        '
+        Me.DestinationLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.DestinationLabel1.AutoSize = false
+        Me.DestinationLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.DestinationLabel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.DestinationLabel1.ForeColor = System.Drawing.Color.White
+        Me.DestinationLabel1.Location = New System.Drawing.Point(553, 83)
+        Me.DestinationLabel1.Name = "DestinationLabel1"
+        Me.DestinationLabel1.Size = New System.Drawing.Size(162, 27)
+        Me.DestinationLabel1.TabIndex = 10
+        Me.DestinationLabel1.Text = "<strong>Destination</strong> <FONT COLOR=""#d9d9d9"">(DST)</FONT>"
+        Me.DestinationLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        '
+        'DepartTimeLabel1
+        '
+        Me.DepartTimeLabel1.AutoSize = true
+        Me.DepartTimeLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.DepartTimeLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.DepartTimeLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
+        Me.DepartTimeLabel1.Location = New System.Drawing.Point(19, 113)
+        Me.DepartTimeLabel1.Name = "DepartTimeLabel1"
+        Me.DepartTimeLabel1.Size = New System.Drawing.Size(97, 19)
+        Me.DepartTimeLabel1.TabIndex = 11
+        Me.DepartTimeLabel1.Text = "00:00 AM/PM"
+        '
+        'ArriveTimeLabel1
+        '
+        Me.ArriveTimeLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.ArriveTimeLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.ArriveTimeLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.ArriveTimeLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
+        Me.ArriveTimeLabel1.Location = New System.Drawing.Point(618, 113)
+        Me.ArriveTimeLabel1.Name = "ArriveTimeLabel1"
+        Me.ArriveTimeLabel1.Size = New System.Drawing.Size(97, 19)
+        Me.ArriveTimeLabel1.TabIndex = 12
+        Me.ArriveTimeLabel1.Text = "00:00 AM/PM"
+        Me.ArriveTimeLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Guna2Panel2
         '
@@ -765,9 +765,8 @@ Partial Class MainForm
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = true
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120!, 120!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(781, 710)
