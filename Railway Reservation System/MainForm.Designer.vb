@@ -72,6 +72,7 @@ Partial Class MainForm
         Me.TrainNumLabel2 = New System.Windows.Forms.Label()
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
+        Me.DescriptionPicture = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.PassengerIcon,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ClassIcon,System.ComponentModel.ISupportInitialize).BeginInit
         Me.ClassPanel.SuspendLayout
@@ -86,6 +87,7 @@ Partial Class MainForm
         CType(Me.Guna2CirclePictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TrainPanel2.SuspendLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.DescriptionPicture,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'PassengerIcon
@@ -774,6 +776,19 @@ Partial Class MainForm
         Me.Guna2Shapes2.UseTransparentBackground = true
         Me.Guna2Shapes2.Zoom = 80
         '
+        'DescriptionPicture
+        '
+        Me.DescriptionPicture.BorderRadius = 10
+        Me.DescriptionPicture.FillColor = System.Drawing.Color.Transparent
+        Me.DescriptionPicture.Image = CType(resources.GetObject("DescriptionPicture.Image"),System.Drawing.Image)
+        Me.DescriptionPicture.ImageRotate = 0!
+        Me.DescriptionPicture.Location = New System.Drawing.Point(270, 346)
+        Me.DescriptionPicture.Name = "DescriptionPicture"
+        Me.DescriptionPicture.Size = New System.Drawing.Size(291, 257)
+        Me.DescriptionPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.DescriptionPicture.TabIndex = 44
+        Me.DescriptionPicture.TabStop = false
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
@@ -792,6 +807,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.FromPanel)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.DescriptionPicture)
         Me.DoubleBuffered = true
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
@@ -816,6 +832,7 @@ Partial Class MainForm
         Me.TrainPanel2.ResumeLayout(false)
         Me.TrainPanel2.PerformLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.DescriptionPicture,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -869,4 +886,5 @@ End Sub
     Friend WithEvents TrainNumLabel2 As Label
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
+    Friend WithEvents DescriptionPicture As Guna.UI2.WinForms.Guna2PictureBox
 End Class

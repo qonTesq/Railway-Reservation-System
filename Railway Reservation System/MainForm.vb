@@ -4,14 +4,18 @@
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatePicker.MinDate = Date.Now
         DatePicker.MaxDate = Date.Now.AddYears(1)
-        Height = 285
+        TrainPanel1.Hide()
+        TrainPanel2.Hide()
+        DescriptionPicture.Show()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         If ValidateFields() Then
             Return
         End If
-        Height = 699
+        TrainPanel1.Show()
+        TrainPanel2.Show()
+        DescriptionPicture.hide()
         Dim origin As String = FromComboBox.SelectedItem
         Dim destination As String = ToComboBox.SelectedItem
         Dim dateOfTravel As Date = DatePicker.Value
