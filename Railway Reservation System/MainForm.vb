@@ -1,13 +1,17 @@
 ﻿Public Class MainForm
+    Private Const MaxPassengersPerTrain As Integer = 5
+
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatePicker.MinDate = Date.Now
         DatePicker.MaxDate = Date.Now.AddYears(1)
+        Height = 285
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         If ValidateFields() Then
             Return
         End If
+        Height = 699
         Dim origin As String = FromComboBox.SelectedItem
         Dim destination As String = ToComboBox.SelectedItem
         Dim dateOfTravel As Date = DatePicker.Value

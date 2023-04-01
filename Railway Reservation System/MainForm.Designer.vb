@@ -57,19 +57,19 @@ Partial Class MainForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TrainClassLabel1 = New System.Windows.Forms.Label()
         Me.TrainNameDashLabel = New System.Windows.Forms.Label()
-        Me.TrainIdLabel1 = New System.Windows.Forms.Label()
+        Me.TrainNumLabel1 = New System.Windows.Forms.Label()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TrainPanel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.ArriveTimeLabel2 = New System.Windows.Forms.Label()
+        Me.DepartTimeLabel2 = New System.Windows.Forms.Label()
+        Me.DestinationLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.SourceLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TrainNameLabel2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TrainClassLabel2 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TrainNumLabel2 = New System.Windows.Forms.Label()
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
         CType(Me.PassengerIcon,System.ComponentModel.ISupportInitialize).BeginInit
@@ -84,7 +84,7 @@ Partial Class MainForm
         Me.Guna2Panel1.SuspendLayout
         Me.TrainPanel1.SuspendLayout
         CType(Me.Guna2CirclePictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Guna2Panel2.SuspendLayout
+        Me.TrainPanel2.SuspendLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -139,12 +139,13 @@ Partial Class MainForm
         Me.ClassComboBox.Font = New System.Drawing.Font("Segoe UI Semibold", 11!, System.Drawing.FontStyle.Bold)
         Me.ClassComboBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.ClassComboBox.ItemHeight = 30
-        Me.ClassComboBox.Items.AddRange(New Object() {"First Class", "Second Class", "Third Class"})
+        Me.ClassComboBox.Items.AddRange(New Object() {"All Class", "First Class", "Second Class", "Third Class"})
         Me.ClassComboBox.Location = New System.Drawing.Point(123, 10)
         Me.ClassComboBox.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.ClassComboBox.Name = "ClassComboBox"
         Me.ClassComboBox.Size = New System.Drawing.Size(216, 36)
         Me.ClassComboBox.Sorted = true
+        Me.ClassComboBox.StartIndex = 0
         Me.ClassComboBox.TabIndex = 19
         Me.ClassComboBox.TextOffset = New System.Drawing.Point(5, 0)
         '
@@ -195,7 +196,7 @@ Partial Class MainForm
         Me.DatePicker.Font = New System.Drawing.Font("Segoe UI Semibold", 11!, System.Drawing.FontStyle.Bold)
         Me.DatePicker.ForeColor = System.Drawing.Color.White
         Me.DatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DatePicker.Location = New System.Drawing.Point(379, 183)
+        Me.DatePicker.Location = New System.Drawing.Point(377, 183)
         Me.DatePicker.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.DatePicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DatePicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
@@ -272,7 +273,7 @@ Partial Class MainForm
         Me.ToPanel.Controls.Add(Me.ToIcon)
         Me.ToPanel.Controls.Add(Me.ToComboBox)
         Me.ToPanel.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
-        Me.ToPanel.Location = New System.Drawing.Point(425, 116)
+        Me.ToPanel.Location = New System.Drawing.Point(424, 116)
         Me.ToPanel.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.ToPanel.Name = "ToPanel"
         Me.ToPanel.Size = New System.Drawing.Size(396, 57)
@@ -355,7 +356,7 @@ Partial Class MainForm
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Image = CType(resources.GetObject("SearchButton.Image"),System.Drawing.Image)
         Me.SearchButton.ImageSize = New System.Drawing.Size(25, 25)
-        Me.SearchButton.Location = New System.Drawing.Point(755, 183)
+        Me.SearchButton.Location = New System.Drawing.Point(753, 183)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(67, 57)
@@ -366,12 +367,12 @@ Partial Class MainForm
         Me.Label1.AutoSize = true
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 29!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
-        Me.Label1.Location = New System.Drawing.Point(328, 32)
+        Me.Label1.Location = New System.Drawing.Point(280, 32)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(167, 66)
+        Me.Label1.Size = New System.Drawing.Size(281, 66)
         Me.Label1.TabIndex = 28
-        Me.Label1.Text = "travel"
+        Me.Label1.Text = "traintravel"
         '
         'Guna2Elipse1
         '
@@ -393,10 +394,11 @@ Partial Class MainForm
         '
         Me.Guna2ControlBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.Guna2ControlBox3.Animated = true
+        Me.Guna2ControlBox3.BorderRadius = 5
         Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
         Me.Guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.Guna2ControlBox3.IconColor = System.Drawing.Color.White
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(683, 0)
+        Me.Guna2ControlBox3.Location = New System.Drawing.Point(689, 0)
         Me.Guna2ControlBox3.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
         Me.Guna2ControlBox3.Size = New System.Drawing.Size(72, 37)
@@ -406,6 +408,7 @@ Partial Class MainForm
         '
         Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.Guna2ControlBox1.Animated = true
+        Me.Guna2ControlBox1.BorderRadius = 5
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.White
@@ -445,7 +448,7 @@ Partial Class MainForm
         Me.TrainPanel1.Controls.Add(Me.Label2)
         Me.TrainPanel1.Controls.Add(Me.TrainClassLabel1)
         Me.TrainPanel1.Controls.Add(Me.TrainNameDashLabel)
-        Me.TrainPanel1.Controls.Add(Me.TrainIdLabel1)
+        Me.TrainPanel1.Controls.Add(Me.TrainNumLabel1)
         Me.TrainPanel1.Controls.Add(Me.Guna2CirclePictureBox1)
         Me.TrainPanel1.Controls.Add(Me.Guna2Shapes1)
         Me.TrainPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
@@ -556,17 +559,17 @@ Partial Class MainForm
         Me.TrainNameDashLabel.TabIndex = 3
         Me.TrainNameDashLabel.Text = "-"
         '
-        'TrainIdLabel1
+        'TrainNumLabel1
         '
-        Me.TrainIdLabel1.AutoSize = true
-        Me.TrainIdLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.TrainIdLabel1.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TrainIdLabel1.ForeColor = System.Drawing.Color.White
-        Me.TrainIdLabel1.Location = New System.Drawing.Point(88, 25)
-        Me.TrainIdLabel1.Name = "TrainIdLabel1"
-        Me.TrainIdLabel1.Size = New System.Drawing.Size(78, 25)
-        Me.TrainIdLabel1.TabIndex = 2
-        Me.TrainIdLabel1.Text = "#00000"
+        Me.TrainNumLabel1.AutoSize = true
+        Me.TrainNumLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.TrainNumLabel1.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainNumLabel1.ForeColor = System.Drawing.Color.White
+        Me.TrainNumLabel1.Location = New System.Drawing.Point(88, 25)
+        Me.TrainNumLabel1.Name = "TrainNumLabel1"
+        Me.TrainNumLabel1.Size = New System.Drawing.Size(78, 25)
+        Me.TrainNumLabel1.TabIndex = 2
+        Me.TrainNumLabel1.Text = "#00000"
         '
         'Guna2CirclePictureBox1
         '
@@ -601,95 +604,95 @@ Partial Class MainForm
         Me.Guna2Shapes1.UseTransparentBackground = true
         Me.Guna2Shapes1.Zoom = 80
         '
-        'Guna2Panel2
+        'TrainPanel2
         '
-        Me.Guna2Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
-        Me.Guna2Panel2.BorderRadius = 10
-        Me.Guna2Panel2.BorderThickness = 3
-        Me.Guna2Panel2.Controls.Add(Me.Label3)
-        Me.Guna2Panel2.Controls.Add(Me.Label4)
-        Me.Guna2Panel2.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Guna2Panel2.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.Guna2Panel2.Controls.Add(Me.Label5)
-        Me.Guna2Panel2.Controls.Add(Me.Label6)
-        Me.Guna2Panel2.Controls.Add(Me.Label7)
-        Me.Guna2Panel2.Controls.Add(Me.Label8)
-        Me.Guna2Panel2.Controls.Add(Me.Label9)
-        Me.Guna2Panel2.Controls.Add(Me.Guna2CirclePictureBox2)
-        Me.Guna2Panel2.Controls.Add(Me.Guna2Shapes2)
-        Me.Guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
-        Me.Guna2Panel2.Location = New System.Drawing.Point(23, 495)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(787, 182)
-        Me.Guna2Panel2.TabIndex = 43
+        Me.TrainPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.TrainPanel2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
+        Me.TrainPanel2.BorderRadius = 10
+        Me.TrainPanel2.BorderThickness = 3
+        Me.TrainPanel2.Controls.Add(Me.ArriveTimeLabel2)
+        Me.TrainPanel2.Controls.Add(Me.DepartTimeLabel2)
+        Me.TrainPanel2.Controls.Add(Me.DestinationLabel2)
+        Me.TrainPanel2.Controls.Add(Me.SourceLabel2)
+        Me.TrainPanel2.Controls.Add(Me.TrainNameLabel2)
+        Me.TrainPanel2.Controls.Add(Me.Label6)
+        Me.TrainPanel2.Controls.Add(Me.TrainClassLabel2)
+        Me.TrainPanel2.Controls.Add(Me.Label8)
+        Me.TrainPanel2.Controls.Add(Me.TrainNumLabel2)
+        Me.TrainPanel2.Controls.Add(Me.Guna2CirclePictureBox2)
+        Me.TrainPanel2.Controls.Add(Me.Guna2Shapes2)
+        Me.TrainPanel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
+        Me.TrainPanel2.Location = New System.Drawing.Point(23, 495)
+        Me.TrainPanel2.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
+        Me.TrainPanel2.Name = "TrainPanel2"
+        Me.TrainPanel2.Size = New System.Drawing.Size(787, 182)
+        Me.TrainPanel2.TabIndex = 43
         '
-        'Label3
+        'ArriveTimeLabel2
         '
-        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+        Me.ArriveTimeLabel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
-        Me.Label3.Location = New System.Drawing.Point(659, 111)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 18)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "00:00 AM/PM"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.ArriveTimeLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.ArriveTimeLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.ArriveTimeLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
+        Me.ArriveTimeLabel2.Location = New System.Drawing.Point(659, 111)
+        Me.ArriveTimeLabel2.Name = "ArriveTimeLabel2"
+        Me.ArriveTimeLabel2.Size = New System.Drawing.Size(104, 18)
+        Me.ArriveTimeLabel2.TabIndex = 12
+        Me.ArriveTimeLabel2.Text = "00:00 AM/PM"
+        Me.ArriveTimeLabel2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Label4
+        'DepartTimeLabel2
         '
-        Me.Label4.AutoSize = true
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
-        Me.Label4.Location = New System.Drawing.Point(20, 111)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(97, 19)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "00:00 AM/PM"
+        Me.DepartTimeLabel2.AutoSize = true
+        Me.DepartTimeLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.DepartTimeLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.DepartTimeLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
+        Me.DepartTimeLabel2.Location = New System.Drawing.Point(20, 111)
+        Me.DepartTimeLabel2.Name = "DepartTimeLabel2"
+        Me.DepartTimeLabel2.Size = New System.Drawing.Size(97, 19)
+        Me.DepartTimeLabel2.TabIndex = 11
+        Me.DepartTimeLabel2.Text = "00:00 AM/PM"
         '
-        'Guna2HtmlLabel1
+        'DestinationLabel2
         '
-        Me.Guna2HtmlLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+        Me.DestinationLabel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Guna2HtmlLabel1.AutoSize = false
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(589, 81)
-        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(173, 27)
-        Me.Guna2HtmlLabel1.TabIndex = 10
-        Me.Guna2HtmlLabel1.Text = "<strong>Destination</strong> <FONT COLOR=""#d9d9d9"">(DST)</FONT>"
-        Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        Me.DestinationLabel2.AutoSize = false
+        Me.DestinationLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.DestinationLabel2.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.DestinationLabel2.ForeColor = System.Drawing.Color.White
+        Me.DestinationLabel2.Location = New System.Drawing.Point(589, 81)
+        Me.DestinationLabel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DestinationLabel2.Name = "DestinationLabel2"
+        Me.DestinationLabel2.Size = New System.Drawing.Size(173, 27)
+        Me.DestinationLabel2.TabIndex = 10
+        Me.DestinationLabel2.Text = "<strong>Destination</strong> <FONT COLOR=""#d9d9d9"">(DST)</FONT>"
+        Me.DestinationLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight
         '
-        'Guna2HtmlLabel2
+        'SourceLabel2
         '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(24, 81)
-        Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(108, 27)
-        Me.Guna2HtmlLabel2.TabIndex = 9
-        Me.Guna2HtmlLabel2.Text = "<strong>Source</strong> <FONT COLOR=""#d9d9d9"">(SRC)</FONT>"
+        Me.SourceLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.SourceLabel2.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.SourceLabel2.ForeColor = System.Drawing.Color.White
+        Me.SourceLabel2.Location = New System.Drawing.Point(24, 81)
+        Me.SourceLabel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SourceLabel2.Name = "SourceLabel2"
+        Me.SourceLabel2.Size = New System.Drawing.Size(108, 27)
+        Me.SourceLabel2.TabIndex = 9
+        Me.SourceLabel2.Text = "<strong>Source</strong> <FONT COLOR=""#d9d9d9"">(SRC)</FONT>"
         '
-        'Label5
+        'TrainNameLabel2
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(177, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(115, 25)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Train Name"
+        Me.TrainNameLabel2.AutoSize = true
+        Me.TrainNameLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.TrainNameLabel2.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainNameLabel2.ForeColor = System.Drawing.Color.White
+        Me.TrainNameLabel2.Location = New System.Drawing.Point(177, 25)
+        Me.TrainNameLabel2.Name = "TrainNameLabel2"
+        Me.TrainNameLabel2.Size = New System.Drawing.Size(115, 25)
+        Me.TrainNameLabel2.TabIndex = 7
+        Me.TrainNameLabel2.Text = "Train Name"
         '
         'Label6
         '
@@ -702,17 +705,17 @@ Partial Class MainForm
         Me.Label6.Size = New System.Drawing.Size(0, 19)
         Me.Label6.TabIndex = 5
         '
-        'Label7
+        'TrainClassLabel2
         '
-        Me.Label7.AutoSize = true
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Silver
-        Me.Label7.Location = New System.Drawing.Point(89, 49)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(163, 19)
-        Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Train Class • 00hr 00min"
+        Me.TrainClassLabel2.AutoSize = true
+        Me.TrainClassLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.TrainClassLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainClassLabel2.ForeColor = System.Drawing.Color.Silver
+        Me.TrainClassLabel2.Location = New System.Drawing.Point(89, 49)
+        Me.TrainClassLabel2.Name = "TrainClassLabel2"
+        Me.TrainClassLabel2.Size = New System.Drawing.Size(163, 19)
+        Me.TrainClassLabel2.TabIndex = 4
+        Me.TrainClassLabel2.Text = "Train Class • 00hr 00min"
         '
         'Label8
         '
@@ -726,17 +729,17 @@ Partial Class MainForm
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "-"
         '
-        'Label9
+        'TrainNumLabel2
         '
-        Me.Label9.AutoSize = true
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(88, 25)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(78, 25)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "#00000"
+        Me.TrainNumLabel2.AutoSize = true
+        Me.TrainNumLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.TrainNumLabel2.Font = New System.Drawing.Font("Segoe UI Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainNumLabel2.ForeColor = System.Drawing.Color.White
+        Me.TrainNumLabel2.Location = New System.Drawing.Point(88, 25)
+        Me.TrainNumLabel2.Name = "TrainNumLabel2"
+        Me.TrainNumLabel2.Size = New System.Drawing.Size(78, 25)
+        Me.TrainNumLabel2.TabIndex = 2
+        Me.TrainNumLabel2.Text = "#00000"
         '
         'Guna2CirclePictureBox2
         '
@@ -778,7 +781,7 @@ Partial Class MainForm
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(833, 699)
-        Me.Controls.Add(Me.Guna2Panel2)
+        Me.Controls.Add(Me.TrainPanel2)
         Me.Controls.Add(Me.TrainPanel1)
         Me.Controls.Add(Me.Guna2Separator1)
         Me.Controls.Add(Me.Guna2Panel1)
@@ -810,8 +813,8 @@ Partial Class MainForm
         Me.TrainPanel1.ResumeLayout(false)
         Me.TrainPanel1.PerformLayout
         CType(Me.Guna2CirclePictureBox1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Guna2Panel2.ResumeLayout(false)
-        Me.Guna2Panel2.PerformLayout
+        Me.TrainPanel2.ResumeLayout(false)
+        Me.TrainPanel2.PerformLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
@@ -849,21 +852,21 @@ End Sub
     Friend WithEvents Label2 As Label
     Friend WithEvents TrainClassLabel1 As Label
     Friend WithEvents TrainNameDashLabel As Label
-    Friend WithEvents TrainIdLabel1 As Label
+    Friend WithEvents TrainNumLabel1 As Label
     Friend WithEvents DestinationLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents SourceLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents ArriveTimeLabel1 As Label
     Friend WithEvents DepartTimeLabel1 As Label
-    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Label5 As Label
+    Friend WithEvents TrainPanel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents ArriveTimeLabel2 As Label
+    Friend WithEvents DepartTimeLabel2 As Label
+    Friend WithEvents DestinationLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents SourceLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents TrainNameLabel2 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents TrainClassLabel2 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents TrainNumLabel2 As Label
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
 End Class
