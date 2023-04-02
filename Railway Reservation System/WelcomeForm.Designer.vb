@@ -183,6 +183,7 @@ Partial Class WelcomeForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "WelcomeForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Guna2Panel1.ResumeLayout(false)
         CType(Me.Guna2PictureBox1,System.ComponentModel.ISupportInitialize).EndInit

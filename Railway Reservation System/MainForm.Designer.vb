@@ -73,6 +73,9 @@ Partial Class MainForm
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.DescriptionPicture = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Ticket_ReservationDataSet = New Railway_Reservation_System.Ticket_ReservationDataSet()
+        Me.TrainnunberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TrainnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PassengerIcon,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ClassIcon,System.ComponentModel.ISupportInitialize).BeginInit
         Me.ClassPanel.SuspendLayout
@@ -88,6 +91,7 @@ Partial Class MainForm
         Me.TrainPanel2.SuspendLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.DescriptionPicture,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Ticket_ReservationDataSet,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'PassengerIcon
@@ -438,7 +442,6 @@ Partial Class MainForm
         '
         'TrainPanel1
         '
-        Me.TrainPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TrainPanel1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.TrainPanel1.BorderRadius = 10
         Me.TrainPanel1.BorderThickness = 3
@@ -608,7 +611,6 @@ Partial Class MainForm
         '
         'TrainPanel2
         '
-        Me.TrainPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TrainPanel2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
         Me.TrainPanel2.BorderRadius = 10
         Me.TrainPanel2.BorderThickness = 3
@@ -782,12 +784,33 @@ Partial Class MainForm
         Me.DescriptionPicture.FillColor = System.Drawing.Color.Transparent
         Me.DescriptionPicture.Image = CType(resources.GetObject("DescriptionPicture.Image"),System.Drawing.Image)
         Me.DescriptionPicture.ImageRotate = 0!
-        Me.DescriptionPicture.Location = New System.Drawing.Point(270, 346)
+        Me.DescriptionPicture.Location = New System.Drawing.Point(224, 284)
         Me.DescriptionPicture.Name = "DescriptionPicture"
-        Me.DescriptionPicture.Size = New System.Drawing.Size(291, 257)
+        Me.DescriptionPicture.Size = New System.Drawing.Size(382, 382)
         Me.DescriptionPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.DescriptionPicture.TabIndex = 44
         Me.DescriptionPicture.TabStop = false
+        '
+        'Ticket_ReservationDataSet
+        '
+        Me.Ticket_ReservationDataSet.DataSetName = "Ticket_ReservationDataSet"
+        Me.Ticket_ReservationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TrainnunberDataGridViewTextBoxColumn
+        '
+        Me.TrainnunberDataGridViewTextBoxColumn.DataPropertyName = "Train_nunber"
+        Me.TrainnunberDataGridViewTextBoxColumn.HeaderText = "Train_nunber"
+        Me.TrainnunberDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TrainnunberDataGridViewTextBoxColumn.Name = "TrainnunberDataGridViewTextBoxColumn"
+        Me.TrainnunberDataGridViewTextBoxColumn.Width = 222
+        '
+        'TrainnameDataGridViewTextBoxColumn
+        '
+        Me.TrainnameDataGridViewTextBoxColumn.DataPropertyName = "Train_name"
+        Me.TrainnameDataGridViewTextBoxColumn.HeaderText = "Train_name"
+        Me.TrainnameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TrainnameDataGridViewTextBoxColumn.Name = "TrainnameDataGridViewTextBoxColumn"
+        Me.TrainnameDataGridViewTextBoxColumn.Width = 221
         '
         'MainForm
         '
@@ -812,6 +835,7 @@ Partial Class MainForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MainForm"
         CType(Me.PassengerIcon,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ClassIcon,System.ComponentModel.ISupportInitialize).EndInit
@@ -833,6 +857,7 @@ Partial Class MainForm
         Me.TrainPanel2.PerformLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.DescriptionPicture,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Ticket_ReservationDataSet,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -887,4 +912,7 @@ End Sub
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents DescriptionPicture As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Ticket_ReservationDataSet As Ticket_ReservationDataSet
+    Friend WithEvents TrainnunberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TrainnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

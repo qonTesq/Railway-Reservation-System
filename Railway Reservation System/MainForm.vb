@@ -13,14 +13,15 @@
         If ValidateFields() Then
             Return
         End If
+        DescriptionPicture.hide()
         TrainPanel1.Show()
         TrainPanel2.Show()
-        DescriptionPicture.hide()
         Dim origin As String = FromComboBox.SelectedItem
         Dim destination As String = ToComboBox.SelectedItem
         Dim dateOfTravel As Date = DatePicker.Value
         Dim classOfTravel As String = ClassComboBox.SelectedItem
         Dim numberOfPassengers As Integer = PassengerCount.Value
+
     End Sub
 
     Private Function ValidateFields() As Boolean
