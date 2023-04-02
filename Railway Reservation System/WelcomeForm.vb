@@ -4,6 +4,6 @@
         MainForm.Show()
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        End
+        Application.Exit()
     End Sub
 End Class

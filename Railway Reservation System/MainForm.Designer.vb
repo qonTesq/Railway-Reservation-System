@@ -24,6 +24,15 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PassengerIcon = New System.Windows.Forms.PictureBox()
         Me.ClassLabel = New System.Windows.Forms.Label()
         Me.ClassIcon = New System.Windows.Forms.PictureBox()
@@ -73,9 +82,14 @@ Partial Class MainForm
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.DescriptionPicture = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Ticket_ReservationDataSet = New Railway_Reservation_System.Ticket_ReservationDataSet()
         Me.TrainnunberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TrainnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
+        Me.DbConnectionStatusLabel = New System.Windows.Forms.Label()
+        Me.ReservationsDataGridView = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.StopsDataGridView = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.TrainsDataGridView = New Guna.UI2.WinForms.Guna2DataGridView()
         CType(Me.PassengerIcon,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ClassIcon,System.ComponentModel.ISupportInitialize).BeginInit
         Me.ClassPanel.SuspendLayout
@@ -91,7 +105,9 @@ Partial Class MainForm
         Me.TrainPanel2.SuspendLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.DescriptionPicture,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Ticket_ReservationDataSet,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ReservationsDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.StopsDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrainsDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'PassengerIcon
@@ -393,7 +409,7 @@ Partial Class MainForm
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(833, 37)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1800, 37)
         Me.Guna2Panel1.TabIndex = 35
         '
         'Guna2ControlBox3
@@ -404,7 +420,7 @@ Partial Class MainForm
         Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
         Me.Guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.Guna2ControlBox3.IconColor = System.Drawing.Color.White
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(689, 0)
+        Me.Guna2ControlBox3.Location = New System.Drawing.Point(1656, 0)
         Me.Guna2ControlBox3.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
         Me.Guna2ControlBox3.Size = New System.Drawing.Size(72, 37)
@@ -418,7 +434,7 @@ Partial Class MainForm
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(108,Byte),Integer), CType(CType(93,Byte),Integer), CType(CType(211,Byte),Integer))
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.White
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(763, 0)
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1730, 0)
         Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(72, 37)
@@ -791,11 +807,6 @@ Partial Class MainForm
         Me.DescriptionPicture.TabIndex = 44
         Me.DescriptionPicture.TabStop = false
         '
-        'Ticket_ReservationDataSet
-        '
-        Me.Ticket_ReservationDataSet.DataSetName = "Ticket_ReservationDataSet"
-        Me.Ticket_ReservationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TrainnunberDataGridViewTextBoxColumn
         '
         Me.TrainnunberDataGridViewTextBoxColumn.DataPropertyName = "Train_nunber"
@@ -812,13 +823,216 @@ Partial Class MainForm
         Me.TrainnameDataGridViewTextBoxColumn.Name = "TrainnameDataGridViewTextBoxColumn"
         Me.TrainnameDataGridViewTextBoxColumn.Width = 221
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = true
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Silver
+        Me.Label3.Location = New System.Drawing.Point(843, 41)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(145, 19)
+        Me.Label3.TabIndex = 45
+        Me.Label3.Text = "Database Connection:"
+        '
+        'Guna2VSeparator1
+        '
+        Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(38,Byte),Integer), CType(CType(47,Byte),Integer))
+        Me.Guna2VSeparator1.FillThickness = 3
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(827, 41)
+        Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
+        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 658)
+        Me.Guna2VSeparator1.TabIndex = 46
+        '
+        'DbConnectionStatusLabel
+        '
+        Me.DbConnectionStatusLabel.AutoSize = true
+        Me.DbConnectionStatusLabel.BackColor = System.Drawing.Color.Transparent
+        Me.DbConnectionStatusLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.DbConnectionStatusLabel.ForeColor = System.Drawing.Color.Red
+        Me.DbConnectionStatusLabel.Location = New System.Drawing.Point(984, 41)
+        Me.DbConnectionStatusLabel.Name = "DbConnectionStatusLabel"
+        Me.DbConnectionStatusLabel.Size = New System.Drawing.Size(104, 19)
+        Me.DbConnectionStatusLabel.TabIndex = 47
+        Me.DbConnectionStatusLabel.Text = "Not Connected"
+        '
+        'ReservationsDataGridView
+        '
+        Me.ReservationsDataGridView.AllowUserToAddRows = false
+        Me.ReservationsDataGridView.AllowUserToDeleteRows = false
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.ReservationsDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ReservationsDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.ReservationsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ReservationsDataGridView.DefaultCellStyle = DataGridViewCellStyle9
+        Me.ReservationsDataGridView.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ReservationsDataGridView.Location = New System.Drawing.Point(844, 64)
+        Me.ReservationsDataGridView.Name = "ReservationsDataGridView"
+        Me.ReservationsDataGridView.ReadOnly = true
+        Me.ReservationsDataGridView.RowHeadersVisible = false
+        Me.ReservationsDataGridView.RowHeadersWidth = 51
+        Me.ReservationsDataGridView.RowTemplate.Height = 24
+        Me.ReservationsDataGridView.Size = New System.Drawing.Size(944, 163)
+        Me.ReservationsDataGridView.TabIndex = 48
+        Me.ReservationsDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.ReservationsDataGridView.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.ReservationsDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.ReservationsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.ReservationsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.ReservationsDataGridView.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.ReservationsDataGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ReservationsDataGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ReservationsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.ReservationsDataGridView.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.ReservationsDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.ReservationsDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ReservationsDataGridView.ThemeStyle.HeaderStyle.Height = 18
+        Me.ReservationsDataGridView.ThemeStyle.ReadOnly = true
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.Height = 24
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ReservationsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        '
+        'StopsDataGridView
+        '
+        Me.StopsDataGridView.AllowUserToAddRows = false
+        Me.StopsDataGridView.AllowUserToDeleteRows = false
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.StopsDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.StopsDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.StopsDataGridView.ColumnHeadersHeight = 18
+        Me.StopsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.StopsDataGridView.DefaultCellStyle = DataGridViewCellStyle6
+        Me.StopsDataGridView.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.StopsDataGridView.Location = New System.Drawing.Point(844, 254)
+        Me.StopsDataGridView.Name = "StopsDataGridView"
+        Me.StopsDataGridView.ReadOnly = true
+        Me.StopsDataGridView.RowHeadersVisible = false
+        Me.StopsDataGridView.RowHeadersWidth = 51
+        Me.StopsDataGridView.RowTemplate.Height = 24
+        Me.StopsDataGridView.Size = New System.Drawing.Size(944, 309)
+        Me.StopsDataGridView.TabIndex = 49
+        Me.StopsDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.StopsDataGridView.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.StopsDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.StopsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.StopsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.StopsDataGridView.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.StopsDataGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.StopsDataGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.StopsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.StopsDataGridView.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.StopsDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.StopsDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.StopsDataGridView.ThemeStyle.HeaderStyle.Height = 18
+        Me.StopsDataGridView.ThemeStyle.ReadOnly = true
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.Height = 24
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.StopsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        '
+        'TrainsDataGridView
+        '
+        Me.TrainsDataGridView.AllowUserToAddRows = false
+        Me.TrainsDataGridView.AllowUserToDeleteRows = false
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.TrainsDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.TrainsDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.TrainsDataGridView.ColumnHeadersHeight = 18
+        Me.TrainsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.TrainsDataGridView.DefaultCellStyle = DataGridViewCellStyle3
+        Me.TrainsDataGridView.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.TrainsDataGridView.Location = New System.Drawing.Point(844, 594)
+        Me.TrainsDataGridView.Name = "TrainsDataGridView"
+        Me.TrainsDataGridView.ReadOnly = true
+        Me.TrainsDataGridView.RowHeadersVisible = false
+        Me.TrainsDataGridView.RowHeadersWidth = 51
+        Me.TrainsDataGridView.RowTemplate.Height = 24
+        Me.TrainsDataGridView.Size = New System.Drawing.Size(944, 83)
+        Me.TrainsDataGridView.TabIndex = 50
+        Me.TrainsDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.TrainsDataGridView.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.TrainsDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.TrainsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.TrainsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.TrainsDataGridView.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.TrainsDataGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.TrainsDataGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.TrainsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.TrainsDataGridView.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainsDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.TrainsDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.TrainsDataGridView.ThemeStyle.HeaderStyle.Height = 18
+        Me.TrainsDataGridView.ThemeStyle.ReadOnly = true
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.Height = 24
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.TrainsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71,Byte),Integer), CType(CType(69,Byte),Integer), CType(CType(94,Byte),Integer))
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(29,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(40,Byte),Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(833, 699)
+        Me.ClientSize = New System.Drawing.Size(1800, 699)
+        Me.Controls.Add(Me.TrainsDataGridView)
+        Me.Controls.Add(Me.StopsDataGridView)
+        Me.Controls.Add(Me.ReservationsDataGridView)
+        Me.Controls.Add(Me.DbConnectionStatusLabel)
+        Me.Controls.Add(Me.Guna2VSeparator1)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TrainPanel2)
         Me.Controls.Add(Me.TrainPanel1)
         Me.Controls.Add(Me.Guna2Separator1)
@@ -857,7 +1071,9 @@ Partial Class MainForm
         Me.TrainPanel2.PerformLayout
         CType(Me.Guna2CirclePictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.DescriptionPicture,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Ticket_ReservationDataSet,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ReservationsDataGridView,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.StopsDataGridView,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrainsDataGridView,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -912,7 +1128,18 @@ End Sub
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents DescriptionPicture As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Ticket_ReservationDataSet As Ticket_ReservationDataSet
     Friend WithEvents TrainnunberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TrainnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DbConnectionStatusLabel As Label
+    Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TrainidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ReservationidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PassengernameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TravellingfromDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TravellingtoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClasstypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ReservationsDataGridView As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents TrainsDataGridView As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents StopsDataGridView As Guna.UI2.WinForms.Guna2DataGridView
 End Class

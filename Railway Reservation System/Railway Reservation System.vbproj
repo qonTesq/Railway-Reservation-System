@@ -120,11 +120,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Ticket_ReservationDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ticket_ReservationDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="WelcomeForm.Designer.vb">
       <DependentUpon>WelcomeForm.vb</DependentUpon>
     </Compile>
@@ -159,17 +154,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Ticket_ReservationDataSet.xsc">
-      <DependentUpon>Ticket_ReservationDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Ticket_ReservationDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Ticket_ReservationDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Ticket_ReservationDataSet.xss">
-      <DependentUpon>Ticket_ReservationDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

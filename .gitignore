@@ -362,5 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# MS Access Database LDB file
-*.ldb
+# MS Access Database files
+*.laccdb
