@@ -34,18 +34,24 @@ Public Class MainForm
         LoadDataGridViews()
     End Sub
 
-    Private sub LoadDataGridViews() 
+    Private sub LoadDataGridViews()
         ReservationsDataGridView.Rows.Clear()
+        StationsDataGridView.Rows.Clear()
         StopsDataGridView.Rows.Clear()
         TrainsDataGridView.Rows.Clear()
         
         Dim dt as New DataTable
-        Dim da As New OleDbDataAdapter("SELECT * FROM Reservations", _conn)
+        Dim da As New OleDbDataAdapter("SELECT * FROM Bookings", _conn)
         da.Fill(dt)
         ReservationsDataGridView.DataSource = dt.DefaultView
 
         dt = New DataTable
-        da = New OleDbDataAdapter("SELECT * FROM Stops", _conn)
+        da = New OleDbDataAdapter("SELECT * FROM Stations", _conn)
+        da.Fill(dt)
+        StationsDataGridView.DataSource = dt.DefaultView
+
+        dt = New DataTable
+        da = New OleDbDataAdapter("SELECT * FROM TrainStops", _conn)
         da.Fill(dt)
         StopsDataGridView.DataSource = dt.DefaultView
         
@@ -69,6 +75,44 @@ Public Class MainForm
         Dim dateOfTravel As Date = DatePicker.Value
         Dim classOfTravel As String = ClassComboBox.SelectedItem
         Dim numberOfPassengers As Integer = PassengerCount.Value
+
+        ' Assume the user has selected the journey from
+        Dim departureStation = "ST001"
+        Dim arrivalStation = "ST003"
+
+        ' Retrieve the train IDs that cover this journey
+        Dim trainIds As New List(Of String)
+        Dim command = New OleDbCommand("SELECT TrainId FROM TrainStops WHERE (StationId = @departureStation OR StationId = @arrivalStation) GROUP BY TrainId HAVING COUNT(*)>1;", _conn)
+        command.Parameters.AddWithValue("@departureStation", departureStation)
+        command.Parameters.AddWithValue("@arrivalStation", arrivalStation)
+        Dim reader As OleDbDataReader = command.ExecuteReader()
+        While reader.Read()
+            trainIds.Add(reader.GetString(0))
+        End While
+        reader.Close()
+
+        If trainIds.Count > 0 Then
+            For Each trainId As String In trainIds
+                ' Retrieve the number of seats that are already booked for this train
+                Dim seatsBooked As Integer = 0
+                command = New OleDbCommand("SELECT SUM(NumberOfSeats) AS SeatsBooked FROM Bookings WHERE TrainId = @trainID AND StationSequence < (SELECT StationSequence FROM TrainStops WHERE TrainId = @trainID AND StationId = @arrivalStation);", _conn)
+                command.Parameters.AddWithValue("@trainID", trainId)
+                'command.Parameters.AddWithValue("@departureStation", departureStation)
+                command.Parameters.AddWithValue("@arrivalStation", arrivalStation)
+                Dim result As Object = command.ExecuteScalar()
+                If Not IsDBNull(result) Then
+                    seatsBooked = CInt(result)
+                End If
+
+                ' Calculate the number of available seats
+                Dim seatsAvailable As Integer = MaxPassengersPerTrain - seatsBooked
+
+                ' Display the result to the user
+                MessageBox.Show(String.Format("{0} seats available on Train {1} from {2} to {3}.", seatsAvailable, trainId, departureStation, arrivalStation))
+            Next
+        Else
+            MessageBox.Show("No train found for the selected journey.")
+        End If
     End Sub
 
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
