@@ -185,7 +185,6 @@ Public Class MainForm
     End Function
 
     Private Function GetAvailableSeats(trainId As String, arrivalStation As String, dateOfTravel As Date) As Integer
-        ' Retrieve the number of seats that are already booked for this train
         Dim seatsBooked = 0
         Dim command As OleDbCommand = Nothing
         Try
@@ -206,7 +205,7 @@ Public Class MainForm
     End Function
 
     Private Function GetTrainName(trainId As String) As String
-        Dim trainName As String = ""
+        Dim trainName = ""
         Dim command As OleDbCommand = Nothing
         Try
             command = New OleDbCommand("SELECT TrainName FROM Trains WHERE TrainId = @trainID;", Conn)
@@ -221,26 +220,6 @@ Public Class MainForm
             command?.Dispose()
         End Try
         Return trainName
-    End Function
-
-    Private Function GetJourneyDuration(trainId As String, departureStation As String, arrivalStation As String) As String
-        Dim journeyDuration = ""
-        Dim command As OleDbCommand = Nothing
-        Try
-            command = New OleDbCommand("SELECT ArrivalTime - DepartureTime AS JourneyDuration FROM TrainStops WHERE TrainId = @trainID AND StationId = @departureStation OR StationId = @arrivalStation;", Conn)
-            command.Parameters.AddWithValue("@trainID", trainId)
-            command.Parameters.AddWithValue("@departureStation", departureStation)
-            command.Parameters.AddWithValue("@arrivalStation", arrivalStation)
-            Dim result As Object = command.ExecuteScalar()
-            If Not IsDBNull(result) Then
-                journeyDuration = CStr(result)
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            command?.Dispose()
-        End Try
-        Return journeyDuration
     End Function
 
     Private Function GetDepartureTime(trainId As String, departureStation As String) As Date
