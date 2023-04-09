@@ -2,6 +2,8 @@
 
 Public Class MainForm
     Private Const MaxPassengersPerTrain As Integer = 5
+    Private ReadOnly _cityIds As New Dictionary(Of String, String)
+    Private ReadOnly _cityCodes As New Dictionary(Of String, String)
 
     ' Create a connection to the database
     Private WithEvents Conn As New OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={Application.StartupPath}\..\..\..\data\RailwayReservation.accdb")
@@ -37,6 +39,18 @@ Public Class MainForm
             End Try
         End If
 
+        _cityIds.add("Jaipur", 55555)
+        _cityIds.add("Rajkot", 44444)
+        _cityIds.add("Ahmedabad", 33333)
+        _cityIds.add("Vadodara", 22222)
+        _cityIds.add("Mumbai", 11111)
+
+        _cityCodes.add("Jaipur", "JPR")
+        _cityCodes.add("Rajkot", "RJT")
+        _cityCodes.add("Ahmedabad", "ADI")
+        _cityCodes.add("Vadodara", "BRC")
+        _cityCodes.add("Mumbai", "BCT")
+
         ' Load the data from the database into the DataGridViews
         LoadDataGridViews()
     End Sub
@@ -69,6 +83,7 @@ Public Class MainForm
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        ' Validate the fields and return if any of them are invalid
         If ValidateFields() Then
             Return
         End If
@@ -77,30 +92,20 @@ Public Class MainForm
         TrainPanel1.Hide()
         TrainPanel2.Hide()
 
-        Dim cityIds As New Dictionary(Of String, String)
-        cityIds.add("Jaipur", 55555)
-        cityIds.add("Rajkot", 44444)
-        cityIds.add("Ahmedabad", 33333)
-        cityIds.add("Vadodara", 22222)
-        cityIds.add("Mumbai", 11111)
-
-        Dim cityCodes As New Dictionary(Of String, String)
-        cityCodes.add("Jaipur", "JPR")
-        cityCodes.add("Rajkot", "RJT")
-        cityCodes.add("Ahmedabad", "ADI")
-        cityCodes.add("Vadodara", "BRC")
-        cityCodes.add("Mumbai", "BCT")
-
+        ' Get the values from the fields
         Dim origin As String = FromComboBox.SelectedItem
         Dim destination As String = ToComboBox.SelectedItem
         Dim dateOfTravel As Date = DatePicker.Value.Date
 
-        Dim departureStation As String = cityIds(origin)
-        Dim arrivalStation As String = cityIds(destination)
+        ' Get the IDs of the stations
+        Dim departureStation As String = _cityIds(origin)
+        Dim arrivalStation As String = _cityIds(destination)
 
+        ' Get the IDs of the trains that run between the stations
         Dim trainIds = GetTrainIds(departureStation, arrivalStation)
 
         If trainIds.Count > 0 Then
+            ' Get the number of seats available in each train
             Dim trainSeats As New Dictionary(Of String, Integer)
             For Each trainId In trainIds
                 Dim seatsAvailable As Integer = GetAvailableSeats(trainId, arrivalStation, dateOfTravel)
@@ -109,6 +114,7 @@ Public Class MainForm
                 End If
             Next
 
+            ' Show the trains that have seats available
             If trainSeats.Count > 1 Then
                 TrainPanel1.Show()
                 TrainPanel2.Show()
@@ -116,8 +122,8 @@ Public Class MainForm
                     TrainIdLabel1.Text = $"#{trainSeats.Keys(0)}"
                     TrainNameLabel1.Text = GetTrainName(trainSeats.Keys(0))
                     TrainClassLabel1.Text = $"{If(ClassComboBox.SelectedIndex = 0, "", ClassComboBox.SelectedItem)}"
-                    SourceLabel1.Text = $"<strong>{origin}</strong> <FONT COLOR=#d9d9d9>({cityCodes(origin)})</FONT>"
-                    DestinationLabel1.Text = $"<strong>{destination}</strong> <FONT COLOR=#d9d9d9>({cityCodes(destination)})</FONT>"
+                    SourceLabel1.Text = $"<strong>{origin}</strong> <FONT COLOR=#d9d9d9>({_cityCodes(origin)})</FONT>"
+                    DestinationLabel1.Text = $"<strong>{destination}</strong> <FONT COLOR=#d9d9d9>({_cityCodes(destination)})</FONT>"
                     DepartTimeLabel1.Text = GetDepartureTime(trainSeats.Keys(0), departureStation).ToString("hh:mm tt")
                     ArriveTimeLabel1.Text = GetArrivalTime(trainSeats.Keys(0), arrivalStation).ToString("hh:mm tt")
                 End If
@@ -125,8 +131,8 @@ Public Class MainForm
                     TrainIdLabel2.Text = $"#{trainSeats.Keys(1)}"
                     TrainNameLabel2.Text = GetTrainName(trainSeats.Keys(1))
                     TrainClassLabel2.Text = $"{If(ClassComboBox.SelectedIndex = 0, "", ClassComboBox.SelectedItem)}"
-                    SourceLabel2.Text = $"<strong>{origin}</strong> <FONT COLOR=#d9d9d9>({cityCodes(origin)})</FONT>"
-                    DestinationLabel2.Text = $"<strong>{destination}</strong> <FONT COLOR=#d9d9d9>({cityCodes(destination)})</FONT>"
+                    SourceLabel2.Text = $"<strong>{origin}</strong> <FONT COLOR=#d9d9d9>({_cityCodes(origin)})</FONT>"
+                    DestinationLabel2.Text = $"<strong>{destination}</strong> <FONT COLOR=#d9d9d9>({_cityCodes(destination)})</FONT>"
                     DepartTimeLabel2.Text = GetDepartureTime(trainSeats.Keys(1), departureStation).ToString("hh:mm tt")
                     ArriveTimeLabel2.Text = GetArrivalTime(trainSeats.Keys(1), arrivalStation).ToString("hh:mm tt")
                 End If
@@ -136,17 +142,83 @@ Public Class MainForm
                     TrainIdLabel1.Text = $"#{trainSeats.Keys(0)}"
                     TrainNameLabel1.Text = GetTrainName(trainSeats.Keys(0))
                     TrainClassLabel1.Text = $"{If(ClassComboBox.SelectedIndex = 0, "", ClassComboBox.SelectedItem)}"
-                    SourceLabel1.Text = $"<strong>{origin}</strong> <FONT COLOR=#d9d9d9>({cityCodes(origin)})</FONT>"
-                    DestinationLabel1.Text = $"<strong>{destination}</strong> <FONT COLOR=#d9d9d9>({cityCodes(destination)})</FONT>"
+                    SourceLabel1.Text = $"<strong>{origin}</strong> <FONT COLOR=#d9d9d9>({_cityCodes(origin)})</FONT>"
+                    DestinationLabel1.Text = $"<strong>{destination}</strong> <FONT COLOR=#d9d9d9>({_cityCodes(destination)})</FONT>"
                     DepartTimeLabel1.Text = GetDepartureTime(trainSeats.Keys(0), departureStation).ToString("hh:mm tt")
                     ArriveTimeLabel1.Text = GetArrivalTime(trainSeats.Keys(0), arrivalStation).ToString("hh:mm tt")
                 End If
-            Else 
+            Else
                 MessageBox.Show("No train found for the selected journey.")
             End If
         Else
             MessageBox.Show("No train found for the selected journey.")
         End If
+    End Sub
+
+    Private Sub BookButton1_Click(sender As Object, e As EventArgs) Handles BookButton1.Click
+        ' Get the values from the fields
+        Dim trainId As String = TrainIdLabel1.Text.Substring(1)
+        Dim origin As String = FromComboBox.SelectedItem
+        Dim destination As String = ToComboBox.SelectedItem
+        Dim dateOfTravel As Date = DatePicker.Value.Date
+        ' Get the IDs of the stations
+        Dim departureStation As String = _cityIds(origin)
+        Dim arrivalStation As String = _cityIds(destination)
+        ' Get the number of seats available in the train
+        Dim seatsAvailable As Integer = GetAvailableSeats(trainId, arrivalStation, dateOfTravel)
+        ' Get the sequence of the booking station
+        Dim bookStationSequence As Integer = GetStationSequence(trainId, departureStation)
+
+        ' Validate the number of passengers
+        If PassengerCount.Value > seatsAvailable Then
+            MessageBox.Show($"Only {seatsAvailable} seats available for this train.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Book the ticket
+        Dim bookSuccess As Boolean = BookTicket(trainId, dateOfTravel, PassengerCount.Value, departureStation, arrivalStation, bookStationSequence)
+
+        ' Show the result
+        If Not bookSuccess Then
+            MessageBox.Show("Booking failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        MessageBox.Show("Booking successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Close()
+    End Sub
+
+    Private Sub BookButton2_Click(sender As Object, e As EventArgs) Handles BookButton2.Click
+        ' Get the values from the fields
+        Dim trainId As String = TrainIdLabel2.Text.Substring(1)
+        Dim origin As String = FromComboBox.SelectedItem
+        Dim destination As String = ToComboBox.SelectedItem
+        Dim dateOfTravel As Date = DatePicker.Value.Date
+        ' Get the IDs of the stations
+        Dim departureStation As String = _cityIds(origin)
+        Dim arrivalStation As String = _cityIds(destination)
+        ' Get the number of seats available in the train
+        Dim seatsAvailable As Integer = GetAvailableSeats(trainId, arrivalStation, dateOfTravel)
+        ' Get the sequence of the booking station
+        Dim bookStationSequence As Integer = GetStationSequence(trainId, departureStation)
+
+        ' Validate the number of passengers
+        If PassengerCount.Value > seatsAvailable Then
+            MessageBox.Show($"Only {seatsAvailable} seats available for this train.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        
+        ' Book the ticket
+        Dim bookSuccess As Boolean = BookTicket(trainId, dateOfTravel, PassengerCount.Value, departureStation, arrivalStation, bookStationSequence)
+
+        ' Show the result
+        If Not bookSuccess Then
+            MessageBox.Show("Booking failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        MessageBox.Show("Booking successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Close()
     End Sub
 
     Private Function ValidateFields() As Boolean
@@ -159,6 +231,46 @@ Public Class MainForm
         Else
             Return False
         End If
+    End Function
+
+    Private Function BookTicket(trainId As String, dateOfTravel As Date, passenCount As Integer, departureStation As String, arrivalStation As String, bookStationSequence As Integer) As Boolean
+        Dim command As OleDbCommand = Nothing
+        Try
+            command = New OleDbCommand("INSERT INTO Bookings (TrainId, DateOfTravel, NumberOfSeats, BookStationSequence, DepartureStation, ArrivalStation) VALUES (@trainId, @dateOfTravel, @passengerCount, @bookStationSequence, @departureStation, @arrivalStation);", Conn)
+            command.Parameters.AddWithValue("@trainId", trainId)
+            command.Parameters.AddWithValue("@dateOfTravel", dateOfTravel)
+            command.Parameters.AddWithValue("@passengerCount", passenCount)
+            command.Parameters.AddWithValue("@bookStationSequence", bookStationSequence)
+            command.Parameters.AddWithValue("@departureStation", departureStation)
+            command.Parameters.AddWithValue("@arrivalStation", arrivalStation)
+            command.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return False
+        Finally
+            command?.Dispose()
+        End Try
+        Return True
+    End Function
+    
+    Private Function GetStationSequence(trainId As String, stationId As String) As Integer
+        Dim command As OleDbCommand = Nothing
+        Dim reader As OleDbDataReader = Nothing
+        Try
+            command = New OleDbCommand("SELECT StationSequence FROM TrainStops WHERE TrainId = @trainId AND StationId = @stationId;", Conn)
+            command.Parameters.AddWithValue("@trainId", trainId)
+            command.Parameters.AddWithValue("@stationId", stationId)
+            reader = command.ExecuteReader()
+            If reader.Read() Then
+                Return reader.GetInt16(0)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            reader?.Close()
+            command?.Dispose()
+        End Try
+        Return -1
     End Function
 
     Private Function GetTrainIds(departureStation As String, arrivalStation As String) As List(Of String)
@@ -260,11 +372,13 @@ Public Class MainForm
         Return arrivalTime
     End Function
 
-    ' Close connection to the database if the form is closed
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ' Close connection to the database if the form is closed
         If Conn.State = ConnectionState.Open Then
             Conn.Close()
         End If
+
+        ' Show the welcome form
         WelcomeForm.Show()
     End Sub
 End Class
