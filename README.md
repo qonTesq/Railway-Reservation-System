@@ -77,17 +77,6 @@ TrainTravel simulates a minimal reservation layer over a static railway network:
 
 ---
 
-## 🗂️ Domain Model
-
-| Concept   | Description                                                                |
-| --------- | -------------------------------------------------------------------------- |
-| Station   | A named stop in the network (unique sequence per train via TrainStops).    |
-| Train     | Logical service linking ordered stations.                                  |
-| TrainStop | Defines the ordered traversal of a train across stations.                  |
-| Booking   | A passenger request consuming seat capacity for a segment on a date/class. |
-
----
-
 ## 🗄️ Database Schema
 
 Minimal conceptual schema (field names illustrative – adjust to actual implementation):
