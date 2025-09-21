@@ -47,14 +47,11 @@ Note: The database path in the code is relative (`Application.StartupPath\..\..\
 
 ## Screenshots
 
-![Welcome Screen](<img width="878" height="323" alt="image" src="https://github.com/user-attachments/assets/853e55ff-6faa-43a3-bfa4-da65cce3f49d" />
-)
+<img width="878" height="323" alt="image" src="https://github.com/user-attachments/assets/dfa38e7b-58da-4b5d-b561-8cdd0dca14ff" />
 
-![Train Search Results](<img width="548" height="452" alt="image" src="https://github.com/user-attachments/assets/b865094f-6e76-400d-aa02-b644f03f404b" />
-)
+<img width="548" height="452" alt="image" src="https://github.com/user-attachments/assets/f1d3b5d6-d84f-4d07-b439-30766f1477f8" />
 
-![Booking Success](<img width="662" height="387" alt="image" src="https://github.com/user-attachments/assets/0346e6bc-8b21-44c7-90c1-8bf654567ac0" />
-)
+<img width="662" height="387" alt="image" src="https://github.com/user-attachments/assets/f3d80a24-f529-457d-8732-bd3f2fd1c5cb" />
 
 ## Notes
 
