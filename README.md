@@ -1,5 +1,7 @@
 # 🚆 TrainTravel (Railway Reservation System)
 
+<img width="878" height="323" alt="Search Screen" src="https://github.com/user-attachments/assets/dfa38e7b-58da-4b5d-b561-8cdd0dca14ff" />
+
 A lightweight Windows Forms (VB.NET) desktop application that demonstrates core concepts of a railway ticket reservation workflow: searching trains between cities, validating seat availability over partial segments, and booking tickets into a simple Microsoft Access database.
 
 > Educational / demo project – intentionally scoped and simplified.
@@ -218,7 +220,6 @@ Graceful degradation ensures the app does not crash on common user mistakes.
 
 ## 📸 Screenshots
 
-<img width="878" height="323" alt="Search Screen" src="https://github.com/user-attachments/assets/dfa38e7b-58da-4b5d-b561-8cdd0dca14ff" />
 <img width="548" height="452" alt="Booking Form" src="https://github.com/user-attachments/assets/f1d3b5d6-d84f-4d07-b439-30766f1477f8" />
 <img width="662" height="387" alt="Result / Status" src="https://github.com/user-attachments/assets/f3d80a24-f529-457d-8732-bd3f2fd1c5cb" />
 
